@@ -14,8 +14,8 @@ Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	2ae4180bcfc00199c465815f89fc3b16
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	php4-devel >= 3:4.3.0
-BuildRequires:	yaz-devel
 BuildRequires:	rpmbuild(macros) >= 1.230
+BuildRequires:	yaz-devel
 %requires_eq_to php4-common php4-devel
 Requires:	%{_sysconfdir}/conf.d
 Obsoletes:	php-pear-%{_modname}
@@ -27,8 +27,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This extension implements a Z39.50 client for PHP using the YAZ
 toolkit.
 
-Find more information at:
-http://www.indexdata.dk/phpyaz/
+Find more information at: http://www.indexdata.dk/phpyaz/
 http://www.indexdata.dk/yaz/
 
 In PECL status of this package is: %{_status}.
@@ -38,8 +37,7 @@ To rozszerzenie implementuje klienta Z39.50 dla PHP za pomoc± narzêdzi
 YAZ.
 
 Wiêcej informacji mo¿na znale¼æ na stronach:
-http://www.indexdata.dk/phpyaz/
-http://www.indexdata.dk/yaz/
+http://www.indexdata.dk/phpyaz/ http://www.indexdata.dk/yaz/
 
 To rozszerzenie ma w PECL status: %{_status}.
 
@@ -78,5 +76,5 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc %{_modname}-%{version}/{CREDITS,README}
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/conf.d/%{_modname}.ini
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conf.d/%{_modname}.ini
 %attr(755,root,root) %{extensionsdir}/%{_modname}.so
