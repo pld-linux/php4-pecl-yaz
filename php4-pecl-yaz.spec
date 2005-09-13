@@ -14,9 +14,9 @@ Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	2ae4180bcfc00199c465815f89fc3b16
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	php4-devel >= 3:4.3.0
-BuildRequires:	rpmbuild(macros) >= 1.230
+BuildRequires:	rpmbuild(macros) >= 1.238
 BuildRequires:	yaz-devel
-%requires_eq_to php4-common php4-devel
+%requires_php_extension
 Requires:	%{_sysconfdir}/conf.d
 Obsoletes:	php-pear-%{_modname}
 Obsoletes:	php-yaz
