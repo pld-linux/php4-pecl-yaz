@@ -16,7 +16,7 @@ URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	php4-devel >= 3:4.3.0
 BuildRequires:	rpmbuild(macros) >= 1.238
 BuildRequires:	yaz-devel
-%requires_php_extension
+%{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
 Obsoletes:	php-pear-%{_modname}
 Obsoletes:	php-yaz
