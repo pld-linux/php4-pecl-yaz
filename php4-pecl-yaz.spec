@@ -7,14 +7,14 @@ Summary:	%{_modname} - a Z39.50 client for PHP
 Summary(pl):	%{_modname} - klient Z39.50 dla PHP
 Name:		php4-pecl-%{_modname}
 Version:	1.0.4
-Release:	3
+Release:	4
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	2ae4180bcfc00199c465815f89fc3b16
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	php4-devel >= 3:4.3.0
-BuildRequires:	rpmbuild(macros) >= 1.238
+BuildRequires:	rpmbuild(macros) >= 1.248
 BuildRequires:	yaz-devel
 %{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
