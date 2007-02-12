@@ -4,7 +4,7 @@
 %define		extensionsdir	%{_libdir}/php4
 
 Summary:	%{_modname} - a Z39.50 client for PHP
-Summary(pl):	%{_modname} - klient Z39.50 dla PHP
+Summary(pl.UTF-8):   %{_modname} - klient Z39.50 dla PHP
 Name:		php4-pecl-%{_modname}
 Version:	1.0.7
 Release:	1
@@ -32,11 +32,11 @@ Find more information at: <http://www.indexdata.dk/phpyaz/>
 
 In PECL status of this package is: %{_status}.
 
-%description -l pl
-To rozszerzenie implementuje klienta Z39.50 dla PHP za pomoc± narzêdzi
+%description -l pl.UTF-8
+To rozszerzenie implementuje klienta Z39.50 dla PHP za pomocÄ… narzÄ™dzi
 YAZ.
 
-Wiêcej informacji mo¿na znale¼æ na stronach:
+WiÄ™cej informacji moÅ¼na znaleÅºÄ‡ na stronach:
 <http://www.indexdata.dk/phpyaz/> <http://www.indexdata.dk/yaz/>.
 
 To rozszerzenie ma w PECL status: %{_status}.
