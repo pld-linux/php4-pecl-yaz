@@ -2,7 +2,6 @@
 %define		_status		stable
 %define		_sysconfdir	/etc/php4
 %define		extensionsdir	%{_libdir}/php4
-
 Summary:	%{_modname} - a Z39.50 client for PHP
 Summary(pl.UTF-8):	%{_modname} - klient Z39.50 dla PHP
 Name:		php4-pecl-%{_modname}
@@ -14,13 +13,13 @@ Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	e240666711bfd9936bb9632272a53ecc
 URL:		http://pecl.php.net/package/yaz/
 BuildRequires:	php4-devel >= 3:4.3.0
-BuildRequires:	rpmbuild(macros) >= 1.322
+BuildRequires:	rpmbuild(macros) >= 1.344
 BuildRequires:	yaz-devel
-%{?requires_php_extension}
-Requires:	%{_sysconfdir}/conf.d
+Requires:	php4-common >= 3:4.4.0-3
 Obsoletes:	php-pear-%{_modname}
 Obsoletes:	php-yaz
 Obsoletes:	php4-yaz
+%{?requires_php_extension}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,13 +63,11 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 
 %post
-[ ! -f /etc/apache/conf.d/??_mod_php4.conf ] || %service -q apache restart
-[ ! -f /etc/httpd/httpd.conf/??_mod_php4.conf ] || %service -q httpd restart
+%php4_webserver_restart
 
 %postun
 if [ "$1" = 0 ]; then
-	[ ! -f /etc/apache/conf.d/??_mod_php4.conf ] || %service -q apache restart
-	[ ! -f /etc/httpd/httpd.conf/??_mod_php4.conf ] || %service -q httpd restart
+	%php4_webserver_restart
 fi
 
 %files
